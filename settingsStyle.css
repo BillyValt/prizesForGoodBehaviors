@@ -55,17 +55,28 @@
 .card {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   position: relative;
   height: 56px;
   /* width: clamp(170px, 17vw, 700px); */
   width: 100%;
-  font-size: 19px;
+  font-size: 17.5px;
   background-color: rgb(255, 255, 255);
   border-radius: 18px;
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
-  padding: 4px;
+  padding: 7px 7px 7px 12px;
+}
+
+.participant-name {
+  max-width: 141px;
+}
+
+.card>input {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -73,16 +84,18 @@
     width: clamp(290px, 66vw, 600px);
   }
 
+  .winner__container {
+    width: clamp(290px, 66vw, 600px);
+  }
+
   .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 56px;
-    font-size: 17px;
+    font-size: 16.5px;
     background-color: rgb(255, 255, 255);
     border-radius: 18px;
     box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
-    padding: 3px;
+  }
+
+  .participant-name {
+    max-width: 90px;
   }
 }

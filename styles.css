@@ -266,6 +266,7 @@ footer {
 
   .winner__container {
     width: clamp(290px, 66vw, 600px);
+    font-size: 24px;
   }
 
   .result__container {
@@ -284,9 +285,5 @@ footer {
 
   .title2 {
     font-size: 19px;
-  }
-
-  .winner__container {
-    font-size: 24px;
   }
 }
