@@ -22,7 +22,7 @@
   margin-left: 10px;
   accent-color: rgb(135, 124, 255);
   cursor: pointer;
-  
+
 }
 
 .saved_notification {
@@ -38,4 +38,51 @@
   font-size: 22px;
   border-radius: 10px;
   visibility: hidden;
+}
+
+.list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 10px;
+  align-items: center;
+  justify-content: center;
+  width: clamp(360px, 50vw, 500px);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  height: 56px;
+  /* width: clamp(170px, 17vw, 700px); */
+  width: 100%;
+  font-size: 19px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 18px;
+  box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+@media (max-width: 600px) {
+  .list-container {
+    width: clamp(290px, 66vw, 600px);
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 56px;
+    font-size: 17px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
+    padding: 3px;
+  }
 }
