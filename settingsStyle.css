@@ -1,0 +1,41 @@
+.settings-general {
+  height: 1000px;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner__container::before {
+  display: none;
+}
+
+.winner__container::after {
+  display: none;
+}
+
+.checkbox-settings {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  accent-color: rgb(135, 124, 255);
+  cursor: pointer;
+  
+}
+
+.saved_notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 170px;
+  height: 40px;
+  background-color: #ee82ee;
+  color: azure;
+  top: -40px;
+  font-size: 22px;
+  border-radius: 10px;
+  visibility: hidden;
+}
