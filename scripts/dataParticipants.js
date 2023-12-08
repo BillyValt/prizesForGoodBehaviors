@@ -1,8 +1,8 @@
 export const participants = [{
-  personName: 'Тюлюпина Виктория',
+  personName: "Тюлюпина Виктория",
   id: '1'
 }, {
-  personName: 'Новиковская Татьяна',
+  personName: "Новиковская Татьяна",
   id: '2'
 }, {
   personName: 'Лукоянова Кристина',
@@ -23,7 +23,7 @@ export const participants = [{
   personName: 'Коржова Ева',
   id: '8'
 }, {
-  personName: 'Макаренко Ксения',
+  personName: 'Мамулян Милена',
   id: '9'
 }, {
   personName: 'Ангелина Гасоева',
@@ -32,12 +32,14 @@ export const participants = [{
   personName: 'Попова Маргарита',
   id: '11'
 }, {
-  personName: 'Мамулян Милена',
+  personName: 'Макаренко Ксения',
   id: '12'
 }];
 
 //==== chosenWinner ====
 export const chosenWinner = [{
-  personName: 'Соколова Валерия',
+  personName: localStorage.getItem('chosenWinner') || 'Соколова Валерия',
   id: '6'
 }];
+
+console.log(localStorage.getItem('chosenWinner'));
