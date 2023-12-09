@@ -18,7 +18,7 @@ export { checkboxStatement };
 let saveButtonListener = saveButton.addEventListener('click', () => {
   localStorage.setItem('setting', settingsCheckboxEl.checked);
 
-  localStorage.setItem('chosenWinner', winnerNameChanged);
+  localStorage.setItem('chosenWinner', chosenWinner[0].personName);
 
   savedNotif.style.visibility = 'visible';
   savedNotif.innerHTML = 'Сохранено ✅';
@@ -36,7 +36,6 @@ let saveButtonListener = saveButton.addEventListener('click', () => {
 
 function generatingCards() {
 
-
   participants.forEach(participant => {
     const name = participant.personName;
 
@@ -44,13 +43,12 @@ function generatingCards() {
     
 
     listContainerEl.innerHTML += `
-  
-    <div class="card">
-      <div class="participant-name">
-        ${name}
+      <div class="card">
+        <div class="participant-name">
+          ${name}
+        </div>
+        <input class="js-radio" data-person-name="${participant.personName}" type="radio" name="radio1" ${isChecked ? 'checked' : ''}>
       </div>
-      <input class="js-radio" data-person-name="${participant.personName}" type="radio" name="radio1" ${isChecked ? 'checked' : ''}>
-    </div>
    `;
 
 
@@ -65,11 +63,11 @@ function generatingCards() {
       // console.log(radioBtn.dataset.personName);
 
       if (radioBtn.checked) {
-        winnerNameChanged = chosenWinner.personName = radioBtn.dataset.personName;
+        chosenWinner[0].personName = radioBtn.dataset.personName;
 
       }
 
-      console.log(winnerNameChanged);
+      console.log(chosenWinner[0].personName);
     })
   })
 }

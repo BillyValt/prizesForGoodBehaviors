@@ -12,8 +12,7 @@
   /* background: linear-gradient(0deg, #ffff8f, #ec9e69, #d56073, #7a4579); */
   overflow: hidden;
   font-family: Roboto, sans-serif, Arial, Helvetica;
-  width: 100vw;
-  width: 100dvw;
+  width: 100svw;
   height: 800px;
   min-width: 360px;
   max-width: 100%;
@@ -35,18 +34,17 @@
 .header>div {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
 }
 
 .unicorn-img {
-  width: 90px;
+  width: 110px;
   user-select: all;
 }
 
 .title {
   font-family: Pixelify Sans, Arial, Helvetica, sans-serif;
-  color: rgb(170, 255, 0);
-  font-size: clamp(40px, 5.9svw, 50px);
+  color: rgb(165, 218, 58);
+  font-size: clamp(40px, 5.4svw, 50px);
   text-align: center;
   width: max-content;
   text-shadow: 0 0px 10px rgb(53, 0, 187);
@@ -54,8 +52,8 @@
 
 .title2 {
   color: azure;
-  text-align: center;
-  font-size: 26px;
+  text-align: left;
+  font-size: 27px;
   position: relative;
 }
 
@@ -86,7 +84,7 @@
   margin-bottom: 20px;
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
   padding-top: 10px;
-
+  
   /* background-color: rgb(170, 255, 0); */
 }
 
@@ -110,9 +108,9 @@
   display: block;
   width: 0;
   height: 0;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-left: 25px solid;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 22px solid;
   position: absolute;
   top: 50%;
   left: 0px;
@@ -124,9 +122,9 @@
   display: block;
   width: 0;
   height: 0;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-right: 25px solid;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 22px solid;
   position: absolute;
   top: 50%;
   right: 0px;
@@ -148,6 +146,24 @@
     transform: translateY(17px);
   }
 }
+
+/* @keyframes anime1 {
+  0% {
+    transform: translateY(-31px);
+  }
+
+  33% {
+    transform: translateY(17px);
+  }
+
+  66% {
+    transform: translateY(-31px);
+  }
+
+  100% {
+    transform: translateY(17px);
+  }
+} */
 
 .winner__incription {
   font-size: 16px;
@@ -213,7 +229,7 @@
 }
 
 .reset__btn {
-  background-color: rgb(195, 0, 0);
+  background-color: rgb(255, 40, 40);
   width: 100px;
   height: 40px;
   font-size: 17px;
@@ -244,10 +260,9 @@ footer {
 @media (max-width: 584px) {
   .header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 0 20px 0;
+    margin: 30px 0 20px 0;
   }
 
   .winner__container {
@@ -260,16 +275,16 @@ footer {
   }
 
   .unicorn-img {
-    width: 90px;
+    width: 60px;
   }
 
   .title {
     font-family: Pixelify Sans;
-    font-size: 33px;
+    font-size: 26px;
     text-align: left;
   }
 
   .title2 {
-    font-size: 18.5px;
+    font-size: 19px;
   }
 }
