@@ -34,10 +34,14 @@ let saveButtonListener = saveButton.addEventListener('click', () => {
 })
 
 
-
 function generatingCards() {
+
+
   participants.forEach(participant => {
     const name = participant.personName;
+
+    const isChecked = name === chosenWinner[0].personName;
+    
 
     listContainerEl.innerHTML += `
   
@@ -45,12 +49,15 @@ function generatingCards() {
       <div class="participant-name">
         ${name}
       </div>
-      <input class="js-radio" data-person-name="${participant.personName}" type="radio" name="radio1">
+      <input class="js-radio" data-person-name="${participant.personName}" type="radio" name="radio1" ${isChecked ? 'checked' : ''}>
     </div>
    `;
+
+
   })
 
   const radioEl = document.querySelectorAll('.js-radio');
+
 
 
   radioEl.forEach(radioBtn => {
@@ -66,6 +73,8 @@ function generatingCards() {
     })
   })
 }
+
+// console.log(isChecked);
 
 generatingCards();
 
