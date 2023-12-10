@@ -4,12 +4,14 @@ const saveButton = document.querySelector('.save-button-js');
 let settingsCheckboxEl = document.querySelector('.settings-checkbox-js');
 const savedNotif = document.querySelector('.saved_notification');
 const listContainerEl = document.querySelector('.js-list-container');
+
 //===Winner variable when  when choosing radio button===
 let winnerNameChanged;
 
 
 export let savedDemoIsOn = JSON.parse(localStorage.getItem('setting'));
 let timerId;
+let timerId1;
 
 let checkboxStatement = settingsCheckboxEl.checked = savedDemoIsOn;
 
@@ -40,10 +42,10 @@ function generatingCards() {
     const name = participant.personName;
 
     const isChecked = name === chosenWinner[0].personName;
-    
+
 
     listContainerEl.innerHTML += `
-      <div class="card">
+      <div class="card js-card" data-person-name="${participant.personName}">
         <div class="participant-name">
           ${name}
         </div>
@@ -64,7 +66,6 @@ function generatingCards() {
 
       if (radioBtn.checked) {
         chosenWinner[0].personName = radioBtn.dataset.personName;
-
       }
 
       console.log(chosenWinner[0].personName);
@@ -76,6 +77,32 @@ function generatingCards() {
 
 generatingCards();
 
+
+const cardEl = document.querySelectorAll('.js-card');
+
+
+cardEl.forEach((card, index) => {
+  card.addEventListener('mousedown', () => {
+    timerId1 = setTimeout(() => {
+
+      card.classList.contains('is-card-marked')
+        ?
+        card.classList.remove('is-card-marked')
+        :
+        card.classList.add('is-card-marked');
+
+    }, 1000);
+
+    console.log(card);
+  });
+
+  card.addEventListener('mouseup', () => {
+    clearTimeout(timerId1)
+    console.log(index);
+  })
+
+
+});
 
 
 

@@ -80,6 +80,8 @@
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
   padding: 7px 7px 7px 12px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .participant-name {
@@ -92,6 +94,11 @@
   cursor: pointer;
   box-sizing: border-box;
   accent-color: rgb(170, 255, 0);
+}
+
+.is-card-marked {
+  background-color: rgb(255, 48, 48);
+  color: rgb(174, 174, 174);
 }
 
 
