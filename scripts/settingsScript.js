@@ -43,7 +43,6 @@ function generatingCards() {
 
     const isChecked = name === chosenWinner[0].personName;
 
-
     listContainerEl.innerHTML += `
       <div class="card js-card" data-person-name="${participant.personName}">
         <div class="participant-name">
@@ -57,7 +56,6 @@ function generatingCards() {
   })
 
   const radioEl = document.querySelectorAll('.js-radio');
-
 
 
   radioEl.forEach(radioBtn => {
@@ -77,23 +75,30 @@ function generatingCards() {
 
 generatingCards();
 
+function markRed(card, index) {
+  if (card.classList.contains('is-card-marked')) {
+    card.classList.remove('is-card-marked')
+
+    localStorage.removeItem(`cardColor${index}`);
+  } else {
+    card.classList.add('is-card-marked')
+
+    localStorage.setItem(`cardColor${index}`, 'is-card-marked');
+  }
+}
 
 const cardEl = document.querySelectorAll('.js-card');
 
-
 cardEl.forEach((card, index) => {
+  const storedClass = localStorage.getItem(`cardColor${index}`);
+
+  if (storedClass) { card.classList.add(storedClass) };
+
+  //===Mouse Click====
   card.addEventListener('mousedown', () => {
     timerId1 = setTimeout(() => {
-
-      card.classList.contains('is-card-marked')
-        ?
-        card.classList.remove('is-card-marked')
-        :
-        card.classList.add('is-card-marked');
-
+      markRed(card, index);
     }, 1000);
-
-    console.log(card);
   });
 
   card.addEventListener('mouseup', () => {
@@ -101,8 +106,20 @@ cardEl.forEach((card, index) => {
     console.log(index);
   })
 
+  //===Touch====
+  card.addEventListener('touchstart', () => {
+    timerId1 = setTimeout(() => {
+      markRed(card, index);
+    }, 1000);
+  });
+
+  card.addEventListener('touchend', () => {
+    clearTimeout(timerId1)
+    console.log(index);
+  })
 
 });
+
 
 
 
