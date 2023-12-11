@@ -1,5 +1,11 @@
-/* .settings-general {
-} */
+.settings-general {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .demo-container {
   display: flex;
@@ -82,10 +88,13 @@
   padding: 7px 7px 7px 12px;
   cursor: pointer;
   user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 .participant-name {
   max-width: 141px;
+  /* user-select: none; */
 }
 
 .card>input {
