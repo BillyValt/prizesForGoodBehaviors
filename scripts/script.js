@@ -7,6 +7,7 @@ const winnerContainerEl = document.querySelector('.winner__container');
 const resultEl = document.querySelector('.result__container');
 const resultImage = document.querySelector('.container__img');
 const imageContainer = document.querySelector('.container__element');
+const dotsWrapper = document.querySelector('.js-dots-wrapper')
 
 let savedDemoIsOn = JSON.parse(localStorage.getItem('setting'));
 
@@ -52,8 +53,11 @@ function pickWinner() {
 
     winnerNameEl.classList.remove('winner-name-animation');
 
+    dotsWrapper.classList.add('dots-wrapper')
+
   }, 3500)
 
+  dotsWrapper.classList.remove('dots-wrapper')
   winnerNameEl.classList.remove('winner-name-animation');
   winnerContainerEl.classList.remove('winner__container__animation');
 };

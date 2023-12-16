@@ -94,7 +94,7 @@
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
   padding-top: 10px;
 
-  /* background-color: rgb(170, 255, 0); */
+
 }
 
 .winner__container__animation {
@@ -171,11 +171,32 @@
   width: clamp(360px, 50vw, 500px);
   background-color: white;
   height: 230px;
-  margin-bottom: 20px;
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
   border-radius: 18px;
   box-sizing: border-box;
+
 }
+
+/* .dots-wrapper {
+  border-radius: 16px;
+  animation: anime5 0.6s linear;
+  animation-iteration-count: 9;
+  outline: none;
+}
+
+@keyframes anime5 {
+  0% {
+    outline: 13px violet dotted;
+  }
+
+  25% {
+    outline: none;
+  }
+
+  50% {
+    outline: 13px limegreen dotted;
+  }
+} */
 
 .container__element {
   display: flex;
@@ -190,35 +211,36 @@
 }
 
 @keyframes anime3 {
-	0%,
-	100% {
-		transform: rotate(0deg);
-		transform-origin: 50% 50%;
-	}
 
-	10% {
-		transform: rotate(8deg);
-	}
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
 
-	20%,
-	40%,
-	60% {
-		transform: rotate(-10deg);
-	}
+  10% {
+    transform: rotate(8deg);
+  }
 
-	30%,
-	50%,
-	70% {
-		transform: rotate(10deg);
-	}
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
 
-	80% {
-		transform: rotate(-8deg);
-	}
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
 
-	90% {
-		transform: rotate(8deg);
-	}
+  80% {
+    transform: rotate(-8deg);
+  }
+
+  90% {
+    transform: rotate(8deg);
+  }
 }
 
 .prize-animation-disappearing {
@@ -226,15 +248,15 @@
 }
 
 @keyframes anime4 {
-	0% {
-		opacity: 1;
-		transform: scale(1);
-	}
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
 
-	100% {
-		opacity: 0;
-		transform: scale(1.4);
-	}
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
 }
 
 
@@ -253,6 +275,7 @@
   align-items: center;
   padding-left: 20px;
   box-sizing: border-box;
+  margin-top: 20px;
 }
 
 .start__btn,
@@ -265,13 +288,14 @@
   /* background: linear-gradient(20deg, red, lightgreen, rgb(163, 209, 255), rgb(53, 1, 69)); */
   /* background-color: rgb(57, 57, 57); */
   /* background: linear-gradient(45deg, rgb(255, 35, 35), rgb(79, 162, 229), green);*/
-  border-radius: 30px;
+  border-radius: 900px;
   background-color: yellowgreen;
   color: rgb(255, 255, 255);
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   font-size: 25px;
   cursor: pointer;
 }
+
 
 .reset__btn {
   background-color: rgb(195, 0, 0);
