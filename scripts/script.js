@@ -95,6 +95,10 @@ function pickPrize() {
     copyResultImage.classList.add('prize-animation');
 
     console.log(copyResultImage.classList.contains('prize-animation'));
+
+    startButton.style.display = 'none'
+    
+    resetButton.style.display = 'block';
   }, 4300);
 
 }
@@ -118,13 +122,22 @@ function resetPrize() {
 }
 
 startButton.addEventListener('click', () => {
+  startButton.disabled = true;
+  startButton.style.opacity = '0.6';
   pickWinner();
   pickPrize();
 });
 
 resetButton.addEventListener('click', () => {
+  //buttons styles
+  startButton.disabled = false;
+  startButton.style.opacity = '1';
+  startButton.style.display = 'block';
+  resetButton.style.display = 'none';
+  
   resetPrize();
 });
+
 
 
 
