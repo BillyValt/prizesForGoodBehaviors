@@ -1,5 +1,4 @@
 import { participants, chosenWinner } from './dataParticipants.js';
-// import { checkboxStatement } from './settingsScript.js';
 
 const startButton = document.querySelector('.js-start__btn');
 const resetButton = document.querySelector('.js-reset__btn');
