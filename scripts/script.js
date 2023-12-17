@@ -1,4 +1,4 @@
-import { participants, chosenWinner } from './dataParticipants.js';
+import { participants, chosenWinner, threeWinners } from './dataParticipants.js';
 
 const startButton = document.querySelector('.js-start__btn');
 const resetButton = document.querySelector('.js-reset__btn');
@@ -10,11 +10,14 @@ const imageContainer = document.querySelector('.container__element');
 const dotsWrapper = document.querySelector('.js-dots-wrapper')
 
 let savedDemoIsOn = JSON.parse(localStorage.getItem('setting'));
+let savedThreeWinners = JSON.parse(localStorage.getItem('setting1'));
+console.log(localStorage)
 
 let winner;
 let wishWinner = chosenWinner[0].personName;
 
 // ======== Index Javascrpt ========
+let threeWinnersNum = 0; //Array num of three winners
 function pickWinner() {
   let personTotalNumber = participants.length;
   const randomPerson = Math.floor(Math.random() * personTotalNumber);
@@ -26,8 +29,7 @@ function pickWinner() {
     <div class="container__element">
       <img class="container__img" id="img-id-0" src="images/mystery__box1.png">
     </div>
-  `
-    ;
+  `;
 
   winnerContainerEl.style.backgroundColor = 'white';
 
@@ -42,10 +44,25 @@ function pickWinner() {
 
   }, 70);
 
+  // console.log(threeWinners[4].personName);
+
+
+  console.log(threeWinnersNum);
   setTimeout(() => {
     clearInterval(intervalId1);
 
-    winner = savedDemoIsOn ? participants[randomPerson].personName : wishWinner;
+    if (savedDemoIsOn) {
+      winner = participants[randomPerson].personName;
+    } else if (savedThreeWinners) {
+      winner = threeWinners[threeWinnersNum].personName;
+
+      if (threeWinnersNum > 1) { threeWinnersNum = 0; } else {
+        threeWinnersNum++;
+      }
+
+    } else { winner = wishWinner; }
+
+    // winner = savedDemoIsOn ? participants[randomPerson].personName : wishWinner;
 
     winnerContainerEl.style.backgroundColor = 'rgb(170, 255, 0)';
 
@@ -97,7 +114,7 @@ function pickPrize() {
     console.log(copyResultImage.classList.contains('prize-animation'));
 
     startButton.style.display = 'none'
-    
+
     resetButton.style.display = 'block';
   }, 4300);
 
@@ -134,7 +151,7 @@ resetButton.addEventListener('click', () => {
   startButton.style.opacity = '1';
   startButton.style.display = 'block';
   resetButton.style.display = 'none';
-  
+
   resetPrize();
 });
 

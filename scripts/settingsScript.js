@@ -1,15 +1,28 @@
 import { participants, chosenWinner } from './dataParticipants.js';
+const checkboxesContainerEl = document.querySelector('.checkboxes-container');
 
 const saveButton = document.querySelector('.save-button-js');
-let settingsCheckboxEl = document.querySelector('.settings-checkbox-js');
 const savedNotif = document.querySelector('.saved_notification');
 const listContainerEl = document.querySelector('.js-list-container');
 
-//===Winner variable when  when choosing radio button===
-let winnerNameChanged;
+//=====Checkbox Elements======
+let settingsCheckboxEl = document.querySelector('.settings-checkbox-js');
+let threeWinnersCheckboxEl = document.querySelector('.three-winners-checkbox-js');
 
+settingsCheckboxEl.addEventListener('click', () => {
+  addListOpacity();
+  threeWinnersCheckboxEl.checked = false;
+});
+
+threeWinnersCheckboxEl.addEventListener('click', () => {
+  addListOpacity();
+  settingsCheckboxEl.checked = false;
+});
 
 export let savedDemoIsOn = JSON.parse(localStorage.getItem('setting'));
+export let savedThreeWinners = JSON.parse(localStorage.getItem('setting1'));
+
+
 let timerId;
 let timerId1;
 
@@ -17,8 +30,38 @@ let checkboxStatement = settingsCheckboxEl.checked = savedDemoIsOn;
 
 export { checkboxStatement };
 
+let threeCheckboxStatement = threeWinnersCheckboxEl.checked = savedThreeWinners;
+
+// console.log(threeCheckboxStatement.checked)
+// console.log(settingsCheckboxEl.checked)
+
+function addListOpacity() {
+  if (settingsCheckboxEl.checked || threeWinnersCheckboxEl.checked) {
+    listContainerEl.style.opacity = '0.3';
+    listContainerEl.pointerEvents = 'none';
+  } else {
+    listContainerEl.style.opacity = '1';
+  }
+}
+
+addListOpacity();
+
+
+//====SAVE BUTTON ACTIONS=====
 let saveButtonListener = saveButton.addEventListener('click', () => {
-  localStorage.setItem('setting', settingsCheckboxEl.checked);
+  if (settingsCheckboxEl.checked) {
+    localStorage.setItem('setting', settingsCheckboxEl.checked);
+    localStorage.removeItem('setting1', threeWinnersCheckboxEl.checked);
+  } else if (threeWinnersCheckboxEl.checked) {
+    localStorage.setItem('setting1', threeWinnersCheckboxEl.checked);
+    localStorage.removeItem('setting', settingsCheckboxEl.checked);
+  } else if (!settingsCheckboxEl.checked && !threeWinnersCheckboxEl.checked) {
+    localStorage.removeItem('setting', settingsCheckboxEl.checked);
+    localStorage.removeItem('setting1', threeWinnersCheckboxEl.checked);
+  }
+
+  console.log(threeWinnersCheckboxEl.checked);
+
 
   localStorage.setItem('chosenWinner', chosenWinner[0].personName);
 
@@ -31,10 +74,9 @@ let saveButtonListener = saveButton.addEventListener('click', () => {
     savedNotif.innerHTML = '';
     savedNotif.style.visibility = 'hidden';
   }, 1200);
-
-  console.log(savedDemoIsOn);
 })
 
+console.log(localStorage);
 
 function generatingCards() {
 
@@ -52,10 +94,10 @@ function generatingCards() {
       </div>
    `;
 
-
   })
 
   const radioEl = document.querySelectorAll('.js-radio');
+
 
 
   radioEl.forEach(radioBtn => {
@@ -73,6 +115,8 @@ function generatingCards() {
 
 // console.log(isChecked);
 
+
+
 generatingCards();
 
 function markRed(card, index) {
@@ -87,6 +131,8 @@ function markRed(card, index) {
   }
 }
 
+
+
 const cardEl = document.querySelectorAll('.js-card');
 
 cardEl.forEach((card, index) => {
@@ -94,7 +140,7 @@ cardEl.forEach((card, index) => {
 
   if (storedClass) { card.classList.add(storedClass) };
 
-  //===Mouse Click====
+  //====Mouse Click====
   card.addEventListener('mousedown', () => {
     timerId1 = setTimeout(() => {
       markRed(card, index);
@@ -106,7 +152,7 @@ cardEl.forEach((card, index) => {
     console.log(index);
   })
 
-  //===Touch====
+  //====Touch====
   card.addEventListener('touchstart', (event) => {
     timerId1 = setTimeout(() => {
       markRed(card, index);
@@ -119,6 +165,7 @@ cardEl.forEach((card, index) => {
     console.log(index);
   })
 });
+
 
 
 

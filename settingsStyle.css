@@ -1,3 +1,7 @@
+.general {
+  height: 1000px;
+}
+
 .settings-general {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -13,6 +17,13 @@
   align-items: center;
   background-color: rgb(67, 67, 67);
   color: rgb(203, 203, 203);
+  font-size: 19px;
+}
+
+.winner__container {
+  display: flex;
+  align-items: center;
+  height: 60px;
 }
 
 .winner__container::before {
@@ -27,7 +38,7 @@
   width: 20px;
   height: 20px;
   margin-left: 10px;
-  accent-color: black;
+  accent-color: rgb(170, 255, 0);
   cursor: pointer;
 }
 

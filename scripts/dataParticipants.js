@@ -34,10 +34,26 @@ export const participants = [{
 }, {
   personName: 'Макаренко Ксения',
   id: '12'
+}, {
+  personName: 'Ямнова Варвара',
+  id: '13'
 }];
+
+
 
 //==== chosenWinner ====
 export const chosenWinner = [{
   personName: localStorage.getItem('chosenWinner') || 'Макаренко Ксения',
   id: '12'
+}];
+
+export const threeWinners = [{
+  personName: "Тюлюпина Виктория",
+  id: '1'
+}, {
+  personName: "Новиковская Татьяна",
+  id: '2'
+}, {
+  personName: 'Лукоянова Кристина',
+  id: '3'
 }];
