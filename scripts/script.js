@@ -17,7 +17,7 @@ let winner;
 let wishWinner = chosenWinner[0].personName;
 
 // ======== Index Javascrpt ========
-let threeWinnersNum = 0; //Array num of three winners
+let threeWinnersNum = 0; //Array index of the three winners
 function pickWinner() {
   let personTotalNumber = participants.length;
   const randomPerson = Math.floor(Math.random() * personTotalNumber);
@@ -62,8 +62,6 @@ function pickWinner() {
 
     } else { winner = wishWinner; }
 
-    // winner = savedDemoIsOn ? participants[randomPerson].personName : wishWinner;
-
     winnerContainerEl.style.backgroundColor = 'rgb(170, 255, 0)';
 
     winnerNameEl.innerHTML = `${winner}`;
@@ -79,8 +77,9 @@ function pickWinner() {
   winnerContainerEl.classList.remove('winner__container__animation');
 };
 
+let prizeNum = 0;
 function pickPrize() {
-  let randomPrizeNum = Math.floor(Math.random() * 9); //<==Prizes quantity adjustment
+  let randomPrizeNum = Math.floor(Math.random() * 10); //<==Prizes quantity adjustment
 
   resultImage.style.opacity = '0';
 
@@ -92,18 +91,32 @@ function pickPrize() {
 
 
   setTimeout(() => {
-    resultEl.innerHTML = savedDemoIsOn ?
-      `
-      <div class="winner__incription">Подарок:</div>
-      <div class="container__element">
-        <img class="container__img" id="img-id-0" src="images/randomPrize${randomPrizeNum}.png">
-      </div>
-    ` : `
+    if (savedDemoIsOn) {
+      resultEl.innerHTML = `
       <div class="winner__incription">Подарок:</div>
         <div class="container__element">
-          <img class="container__img" id="img-id-0" src="images/randomPrize6.png">
-        </div>
-    ` ;
+        <img class="container__img" id="img-id-0" src="images/randomPrize${randomPrizeNum}.png">
+      </div>
+      `;
+    } else if (savedThreeWinners) {
+      resultEl.innerHTML = ` 
+      <div class="winner__incription">Подарок:</div>
+        <div class="container__element">
+        <img class="container__img" id="img-id-0" src="images/prizesForThree/sPrize${prizeNum}.png">
+      </div>
+     `;
+
+     if(prizeNum > 1) {
+      prizeNum = 0;
+    } else {prizeNum++;}
+    } else {
+      resultEl.innerHTML = ` 
+      <div class="winner__incription">Подарок:</div>
+        <div class="container__element">
+        <img class="container__img" id="img-id-0" src="images/randomPrize6.png">
+      </div>
+     `;
+    }
 
     winnerContainerEl.classList.add('winner__container__animation');
 
