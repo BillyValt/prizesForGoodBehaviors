@@ -23,7 +23,8 @@
 .winner__container {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 54px;
+  background-color: rgb(23, 23, 23);
 }
 
 .winner__container::before {
@@ -64,6 +65,7 @@
 /*Save button in this file*/
 .start__btn {
   background-color: gray;
+  background-color: rgb(23, 23, 23);
 }
 
 .start__btn:active {
@@ -91,10 +93,11 @@
   height: 56px;
   width: 100%;
   font-size: 17.5px;
-  background-color: rgb(67, 67, 67);
+  /* background-color: rgb(67, 67, 67); */
+  background-color: rgb(36, 36, 36);
   color: rgb(203, 203, 203);
   border-radius: 18px;
-  box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7);
+  /* box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7); */
   box-sizing: border-box;
   padding: 7px 7px 7px 12px;
   cursor: pointer;
