@@ -3,19 +3,63 @@
   padding: 0;
 }
 
+.body {
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fall 10s linear infinite;
+}
+
+.star {
+  position: absolute;
+  background: #fff; /* You can replace this with your star image */
+  border-radius: 50%;
+  animation: twinkle 1s infinite alternate; /* Add twinkling animation */
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(1vh);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(110vh);
+    opacity: 0.3;
+  }
+}
+
+
 .general {
   display: flex;
   flex-direction: column;
-  /* background: linear-gradient(0deg, #ee82ee, black 88%); */
-  background: url(images/background2.png);
+  background: linear-gradient(0deg, #ee82ee, black 88%);
+
+  /* background: url(images/background2.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 
   /* background: linear-gradient(0deg, #dfdfdf 60%, limegreen, black); */
   /* background: linear-gradient(0deg, #ffa87b, #f35c6e, #5c3e84, #686ee2); */
   /* background: linear-gradient(0deg, #ffff8f, #ec9e69, #d56073, #7a4579); */
   overflow: hidden;
   font-family: Roboto, sans-serif, Arial, Helvetica;
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   width: 100vw;
   width: 100dvw;
   height: 800px;
@@ -41,16 +85,19 @@
   top: 0px;
   margin: 30px 0 20px 0;
   box-sizing: border-box;
+  z-index: 100;
+
 }
 
 .header>div {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
+  z-index: 100;
 }
 
 .unicorn-img {
-  width: 90px;
+  width: 80px;
   user-select: all;
 }
 
@@ -97,7 +144,51 @@
   margin-bottom: 12px;
   /* box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7); */
   padding-top: 10px;
+  z-index: 100;
 }
+
+.name-stars1 {
+  color: #681d68;
+}
+
+.name-stars2 {
+  color: rgb(67, 64, 255);
+}
+
+.name-stars3 {
+  color: rgb(196, 196, 0);
+}
+
+.name-stars4 {
+  color: green;
+}
+
+.name-stars5 {
+  color: rgb(47, 175, 218);
+}
+
+.name-stars6 {
+  color: rgb(67, 64, 255);
+}
+
+.name-stars7 {
+  color: rgb(196, 196, 0);
+}
+
+.name-stars8 {
+  color: rgb(47, 175, 218);
+}
+
+.name-stars9 {
+  color: rgb(255, 0, 38);
+}
+
+.name-stars10 {
+  color: rgb(255, 0, 38);
+  color: green;
+}
+
+
 
 .winner__container__animation {
   animation: anime2 0.2s ease-in-out;
@@ -163,6 +254,7 @@
   position: absolute;
   top: 5px;
   left: 10px;
+  font-weight: 600;
 }
 
 .result__container {
@@ -177,6 +269,7 @@
   /* box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7); */
   border-radius: 18px;
   box-sizing: border-box;
+  z-index: 100;
 }
 
 .dots-wrapper {
@@ -186,6 +279,8 @@
   /* outline: none; */
   /* animation: textcolor2 4s  5s linear infinite alternate; */
 }
+
+
 
 /* @keyframes anime5 {
   0% {
@@ -210,7 +305,7 @@
 }
 
 .prize-animation {
-  animation: anime3 2.3s ease 0s 1 normal forwards;
+  animation: anime3 1.5s ease 0s 1 normal forwards;
 }
 
 @keyframes anime3 {
@@ -237,13 +332,13 @@
     transform: rotate(10deg);
   }
 
-  80% {
+  /* 80% {
     transform: rotate(-8deg);
   }
 
   90% {
     transform: rotate(8deg);
-  }
+  } */
 }
 
 .prize-animation-disappearing {
@@ -297,6 +392,7 @@
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
   font-size: 25px;
   cursor: pointer;
+  z-index: 100;
 }
 
 .start__btn {
@@ -358,7 +454,7 @@ footer:last-child {
   }
 
   .unicorn-img {
-    width: 90px;
+    width: 80px;
   }
 
   .title {

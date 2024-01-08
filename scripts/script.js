@@ -1,4 +1,10 @@
 import { participants, chosenWinner, threeWinners } from './dataParticipants.js';
+// import createStars from './stars.js';
+import runSnowflakes from './snowflakes.js';
+
+runSnowflakes();
+// createStars();
+
 
 const startButton = document.querySelector('.js-start__btn');
 const resetButton = document.querySelector('.js-reset__btn');
@@ -11,7 +17,6 @@ const dotsWrapper = document.querySelector('.js-dots-wrapper')
 
 let savedDemoIsOn = JSON.parse(localStorage.getItem('setting'));
 let savedThreeWinners = JSON.parse(localStorage.getItem('setting1'));
-console.log(localStorage)
 
 let winner;
 let wishWinner = chosenWinner[0].personName;
@@ -23,8 +28,7 @@ function pickWinner() {
   const randomPerson = Math.floor(Math.random() * personTotalNumber);
   let intervalId1;
 
-  resultEl.innerHTML =
-    `
+  resultEl.innerHTML = `
     <div class="winner__incription">Подарок:</div>
     <div class="container__element">
       <img class="container__img" id="img-id-0" src="images/mystery__box1.png">
@@ -70,7 +74,7 @@ function pickWinner() {
 
     dotsWrapper.classList.add('dots-wrapper')
 
-  }, 3500)
+  }, 3400)
 
   dotsWrapper.classList.remove('dots-wrapper')
   winnerNameEl.classList.remove('winner-name-animation');
@@ -87,7 +91,7 @@ function pickPrize() {
     const copyResultImage = document.querySelector('.container__img');
 
     copyResultImage.classList.add('prize-animation-disappearing');
-  }, 3500);
+  }, 3400);
 
 
   setTimeout(() => {
@@ -106,9 +110,9 @@ function pickPrize() {
       </div>
      `;
 
-     if(prizeNum > 1) {
-      prizeNum = 0;
-    } else {prizeNum++;}
+      if (prizeNum > 1) {
+        prizeNum = 0;
+      } else { prizeNum++; }
     } else {
       resultEl.innerHTML = ` 
       <div class="winner__incription">Подарок:</div>
@@ -129,14 +133,14 @@ function pickPrize() {
     startButton.style.display = 'none'
 
     resetButton.style.display = 'block';
-  }, 4300);
+  }, 4400);
 
 }
 
 resultImage.classList.add('prize-animation');
 
 function resetPrize() {
-  winnerNameEl.innerHTML = '&#10053;&#10053;&#10053;&#10053;&#10053; &#10053;&#10053;&#10053;&#10053;&#10053;';
+  winnerNameEl.innerHTML = '<span class="name-stars1">&#10032;&#10032;&#10032;&#10032;&#10032; &#10032;&#10032;&#10032;&#10032;&#10032;</span>';
 
   resultEl.innerHTML =
     `
