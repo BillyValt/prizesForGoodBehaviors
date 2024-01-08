@@ -1,6 +1,8 @@
 export default function createStars() {
+
   const numberOfStars = 220; // Adjust the number of stars
-  const container = document.body;
+  // const container = document.body;
+  const container = document.querySelector('.general');
 
   function updateStarPosition(star) {
     const size = Math.random() * 2.3 + 0.9; // Random size between 1 and 4
@@ -32,5 +34,3 @@ export default function createStars() {
     stars.forEach(updateStarPosition);
   });
 }
-
-createStars();

@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .body {
@@ -17,15 +18,18 @@
 
 .star {
   position: absolute;
-  background: #fff; /* You can replace this with your star image */
+  background: #fff;
+  /* You can replace this with your star image */
   border-radius: 50%;
-  animation: twinkle 1s infinite alternate; /* Add twinkling animation */
+  animation: twinkle 1s infinite alternate;
+  /* Add twinkling animation */
 }
 
 @keyframes twinkle {
   from {
     opacity: 0.1;
   }
+
   to {
     opacity: 1;
   }
@@ -424,13 +428,15 @@ footer {
   left: 40px;
   right: 40px;
   color: azure;
-  font-family: Pixelify Sans, Arial;
-  font-size: 1.4rem;
   box-sizing: border-box;
 }
 
+footer span {
+  margin-inline: 10px;
+}
+
 footer:last-child {
-  font-family: roboto;
+  font-family: roboto;;
   font-size: 16px;
 }
 
@@ -469,5 +475,22 @@ footer:last-child {
 
   .buttons__container {
     margin-top: 8px;
+  }
+
+  footer {
+    /* display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    right: 40px;
+    color: azure;
+    box-sizing: border-box; */
+    font-size: 14.2px;
+    min-width: 310px;
+  }
+  
+  footer span {
+    margin-inline: 4px;
   }
 }
