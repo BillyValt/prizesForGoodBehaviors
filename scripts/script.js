@@ -2,8 +2,8 @@ import { participants, chosenWinner, threeWinners } from './dataParticipants.js'
 import createStars from './stars.js';
 import runSnowflakes from './snowflakes.js';
 
-// runSnowflakes();
-createStars();
+runSnowflakes();
+// createStars();
 
 
 const startButton = document.querySelector('.js-start__btn');
@@ -65,8 +65,6 @@ function pickWinner() {
       }
 
     } else { winner = wishWinner; }
-
-    winnerContainerEl.style.backgroundColor = 'rgb(170, 255, 0)';
 
     winnerNameEl.innerHTML = `🎉${winner}`;
 
