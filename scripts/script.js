@@ -2,8 +2,8 @@ import { participants, chosenWinner, threeWinners } from './dataParticipants.js'
 import createStars from './stars.js';
 import runSnowflakes from './snowflakes.js';
 
-runSnowflakes();
-// createStars();
+// runSnowflakes();
+createStars();
 
 
 const startButton = document.querySelector('.js-start__btn');
@@ -125,8 +125,6 @@ function pickPrize() {
     const copyResultImage = document.querySelector('.container__img');
 
     copyResultImage.classList.add('prize-animation');
-
-    console.log(copyResultImage.classList.contains('prize-animation'));
 
     startButton.style.display = 'none'
 
