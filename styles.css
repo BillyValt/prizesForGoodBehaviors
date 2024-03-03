@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   /* overflow: hidden; */
-}
+} */
 
 .snowflake {
   position: absolute;
@@ -418,9 +418,9 @@ body {
   z-index: 100;
 }
 
-.start__btn {
+/* .start__btn {
   /* display: none; */
-}
+} */
 
 .reset__btn {
   display: none;
