@@ -60,8 +60,8 @@ body {
   background-size: cover; */
 
   /* background: linear-gradient(0deg, #dfdfdf 60%, limegreen, black); */
-  background: linear-gradient(0deg, #ffa87b, #f35c6e, #5c3e84, #686ee2);
-  /* background: linear-gradient(0deg, #ffff8f, #ec9e69, #d56073, #7a4579); */
+  /* background: linear-gradient(0deg, #ffa87b, #f35c6e, #5c3e84, #686ee2); */
+  background: linear-gradient(0deg, #ffff8f, #ec9e69, #d56073, #7a4579);
   overflow: hidden;
   font-family: Roboto, sans-serif, Arial, Helvetica;
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
@@ -157,7 +157,7 @@ body {
   height: 77px;
   font-size: 26px;
   font-family: Pixelify Sans;
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(247, 247, 247);
   border-radius: 18px;
   box-sizing: border-box;
   margin-bottom: 12px;
@@ -285,7 +285,7 @@ body {
   position: relative;
   width: clamp(360px, 50vw, 500px);
   /* background-color: white; */
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(247, 247, 247);
   height: 230px;
   /* box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.7); */
   border-radius: 18px;
