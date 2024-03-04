@@ -20,7 +20,7 @@ export const participants = [{
   personName: 'Полонская Мария',
   id: '7'
 }, {
-  personName: 'Коржова Ева',
+  personName: '???',
   id: '8'
 }, {
   personName: 'Мамулян Милена',
@@ -34,9 +34,6 @@ export const participants = [{
 }, {
   personName: 'Макаренко Ксения',
   id: '12'
-}, {
-  personName: 'Ямнова Варвара',
-  id: '13'
 }];
 
 

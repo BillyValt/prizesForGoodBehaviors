@@ -100,7 +100,7 @@
   background-color: rgb(36, 36, 36);
   /* color: rgb(203, 203, 203); */
   border-radius: 18px;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   padding: 7px 7px 7px 12px;
   cursor: pointer;
@@ -128,8 +128,9 @@
   /* background-color: rgb(255, 48, 48);
   color: rgb(174, 174, 174); */
   background-color: rgba(211, 211, 211, 0.1);
+  background-color: rgba(255, 255, 255, 0.437);
   box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
-  color: rgb(146, 146, 146);
+  color: rgba(0, 0, 0, 0.415);
 }
 
 
