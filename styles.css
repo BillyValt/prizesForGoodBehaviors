@@ -5,8 +5,8 @@
 }
 
 /* body {
-  /* overflow: hidden; */
-}
+  overflow: hidden; 
+}*/
 
 */ .snowflake {
   position: absolute;
@@ -63,7 +63,7 @@
   /* background: linear-gradient(0deg, #ffa87b, #f35c6e, #5c3e84, #686ee2); */
   /* background: linear-gradient(0deg, #ffff8f, #ec9e69, #d56073, #7a4579); */
   /* background: linear-gradient(0deg, #ffffff, #00ce53, #ff61a8, #ff006a); */
-  background: linear-gradient(0deg, #ffb2b2, #00ff66, #ff002b, #6e006c);
+  background: linear-gradient(0deg, #ffffff, #63ffaf, #ff447c, #6e006c);
   overflow: hidden;
   font-family: Roboto, sans-serif, Arial, Helvetica;
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */

@@ -5,7 +5,7 @@ export default function createStars() {
   const container = document.querySelector('.general');
 
   function updateStarPosition(star) {
-    const size = Math.random() * 2.3 + 0.9; // Random size between 1 and 4
+    const size = Math.random() * 2.3 + 2; // Random size between 1 and 4
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
 
